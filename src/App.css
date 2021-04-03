@@ -1,0 +1,21 @@
+.menu {
+  position: fixed;
+  height: 100vh;
+  top: 8%;
+  left: 0%;
+  z-index: 1;
+  width: 320px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: 1s;
+  display: none;
+}
+
+.active{
+  /* left: 0; */
+  display: block;
+}
+.disabled{
+  /* left: -30%; */
+  display: none;
+}
