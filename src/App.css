@@ -2,7 +2,7 @@
   position: fixed;
   height: 100vh;
   top: 8%;
-  left: 0%;
+  right: 0%;
   z-index: 1;
   width: 320px;
   overflow-y: scroll;

@@ -19,7 +19,11 @@ function App() {
   const handleCart = (item) => {
     const checkItem = carts.filter((cartItem) => cartItem.id === item.id)
       dispatch({type:"ADD_ITEM", payload: item})     
+      setTotalCart(totalCart => totalCart + Math.round(item.price));
+      console.log(totalCart);
   }
+
+  const [totalCart, setTotalCart] = useState(0);
 
   const [counter, setCounter] = useState(1);
   const [show, setShow ] = useState(false);
@@ -45,7 +49,12 @@ function App() {
       </ul>
          <div className="container">
          <div className="row">
+           
            <div className={`  bg-dark justify-content-center menu ${show ? "active":"disabled"}`}>
+           <div className="cart_total d-flex justify-content-space-between">
+             <span className="text-white h4">Total:</span>
+              { totalCart && <span className="text-white h4">{totalCart.length}</span> }  
+           </div>
              {
                carts.map((item) => {
                   return <div className="card p-3 m-2 d-flex" style={{width: 270}}>
